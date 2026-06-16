@@ -19,10 +19,10 @@
 	h2{font-size:14px;color:#58a6ff;margin:20px 0 8px;padding-bottom:4px;border-bottom:2px solid #30363d}
 	.subtitle{color:#8b949e;font-size:11px;margin:2px 0 12px}
 	.card{background:#1a1d27;border:1px solid #30363d;border-radius:8px;padding:12px;margin-bottom:10px}
-	.metrics{display:flex;gap:8px;flex-wrap:wrap}
-	.metric{background:#1a1d27;border:1px solid #30363d;border-radius:6px;padding:8px 10px;text-align:center;flex:1;min-width:65px}
-	.metric .val{font-size:18px;font-weight:bold}
-	.metric .lbl{font-size:9px;color:#8b949e;margin-top:1px}
+	.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+	.metric{background:#1a1d27;border:1px solid #30363d;border-radius:6px;padding:10px 8px;text-align:center}
+	.metric .val{font-size:16px;font-weight:bold;color:#f0f3f5}
+	.metric .lbl{font-size:9px;color:#8b949e;margin-top:2px}
 	table{width:100%;border-collapse:collapse;font-size:11px}
 	th{text-align:left;padding:5px 6px;border-bottom:2px solid #30363d;color:#8b949e;font-weight:600;font-size:10px;white-space:nowrap}
 	td{padding:4px 6px;border-bottom:1px solid #30363d;white-space:nowrap}
@@ -42,9 +42,10 @@
 		h1{{font-size:16px}}
 		h2{{font-size:13px;margin:16px 0 6px}}
 		.card{{padding:10px;margin-bottom:8px;border-radius:6px}}
-		.metric{{padding:6px 8px;min-width:55px}}
-		.metric .val{{font-size:15px}}
-		.metric .lbl{{font-size:8px}}
+		.metrics{{grid-template-columns:repeat(3,1fr);gap:3px}}
+		.metric{{padding:7px 4px}}
+		.metric .val{{font-size:13px}}
+		.metric .lbl{{font-size:7px}}
 		table{{font-size:10px;min-width:380px}}
 		th{{font-size:9px;padding:4px 5px}}
 		td{{font-size:10px;padding:3px 5px}}
@@ -58,23 +59,23 @@
 <div class="nav">
   <a href="index.html">← 综合 Dashboard</a>
   <span style="color:#8b949e">|</span>
-  <span style="color:#8b949e">刷新: 2026-06-16 15:22 ET</span>
+  <span style="color:#8b949e">刷新: 2026-06-17 00:43 ET</span>
   <span style="color:#8b949e">|</span>
   <span style="color:#8b949e">每 15 分钟自动刷新</span>
 </div>
 
 <h1>【Claude Code】美股量化模型 — 模拟盘实时</h1>
 <div class="subtitle">
-  $20,000 模拟盘 | MA 5/20 + SL5%/TP10% | 2026-06-12 → 2026-06-16 | 目标: 年化 +8%
+  $20,000 模拟盘 | MA 5/20 + SL5%/TP10% | 2026-06-12 → 2026-06-17 | 目标: 年化 +8%
 </div>
 
 <div class="metrics">
-  <div class="metric"><div class="val" style="color:#3fb950">$20,413</div><div class="lbl">总权益</div></div>
-  <div class="metric"><div class="val" style="color:#3fb950">+2.07%</div><div class="lbl">累计收益</div></div>
-  <div class="metric"><div class="val" style="color:#3fb950">+178.1%</div><div class="lbl">年化收益</div></div>
+  <div class="metric"><div class="val">$20,816</div><div class="lbl">总权益</div></div>
+  <div class="metric"><div class="val">+4.08%</div><div class="lbl">累计收益</div></div>
+  <div class="metric"><div class="val">+638.2%</div><div class="lbl">年化收益</div></div>
   <div class="metric"><div class="val">11.22</div><div class="lbl">Sharpe</div></div>
   <div class="metric"><div class="val" style="color:#f85149">+0.0%</div><div class="lbl">最大回撤</div></div>
-  <div class="metric"><div class="val" style="color:#3fb950">2255%</div><div class="lbl">距离 8% 目标</div></div>
+  <div class="metric"><div class="val">4450%</div><div class="lbl">距离 8% 目标</div></div>
   <div class="metric"><div class="val">0/5</div><div class="lbl">平仓/总交易</div></div>
   <div class="metric"><div class="val">0%</div><div class="lbl">胜率</div></div>
 </div>
@@ -118,39 +119,39 @@
     <tr><th>Ticker</th><th class="num">股数</th><th class="num">入场价</th><th class="num">现价</th><th class="num">市值</th><th class="num">PnL</th><th class="num">PnL%</th><th class="num">天数</th></tr>
     <tr>
           <td><b>JNJ</b></td><td class="num">16</td>
-          <td class="num">$238.43</td><td class="num">$235.78</td>
-          <td class="num">$3,772</td>
-          <td class="num" style="color:#f85149">$-42</td>
-          <td class="num" style="color:#f85149">-1.1%</td>
-          <td class="num">4d</td></tr><tr>
+          <td class="num">$238.43</td><td class="num">$235.69</td>
+          <td class="num">$3,771</td>
+          <td class="num" style="color:#f85149">$-44</td>
+          <td class="num" style="color:#f85149">-1.2%</td>
+          <td class="num">5d</td></tr><tr>
           <td><b>GE</b></td><td class="num">12</td>
-          <td class="num">$332.72</td><td class="num">$342.29</td>
-          <td class="num">$4,107</td>
-          <td class="num" style="color:#3fb950">$+115</td>
-          <td class="num" style="color:#3fb950">+2.9%</td>
-          <td class="num">4d</td></tr><tr>
+          <td class="num">$332.72</td><td class="num">$351.71</td>
+          <td class="num">$4,221</td>
+          <td class="num" style="color:#3fb950">$+228</td>
+          <td class="num" style="color:#3fb950">+5.7%</td>
+          <td class="num">5d</td></tr><tr>
           <td><b>JPM</b></td><td class="num">12</td>
-          <td class="num">$313.70</td><td class="num">$319.66</td>
-          <td class="num">$3,836</td>
-          <td class="num" style="color:#3fb950">$+71</td>
-          <td class="num" style="color:#3fb950">+1.9%</td>
-          <td class="num">4d</td></tr><tr>
+          <td class="num">$313.70</td><td class="num">$331.70</td>
+          <td class="num">$3,980</td>
+          <td class="num" style="color:#3fb950">$+216</td>
+          <td class="num" style="color:#3fb950">+5.7%</td>
+          <td class="num">5d</td></tr><tr>
           <td><b>GS</b></td><td class="num">3</td>
-          <td class="num">$1036.00</td><td class="num">$1077.67</td>
-          <td class="num">$3,233</td>
-          <td class="num" style="color:#3fb950">$+125</td>
-          <td class="num" style="color:#3fb950">+4.0%</td>
-          <td class="num">4d</td></tr><tr>
+          <td class="num">$1036.00</td><td class="num">$1095.19</td>
+          <td class="num">$3,286</td>
+          <td class="num" style="color:#3fb950">$+178</td>
+          <td class="num" style="color:#3fb950">+5.7%</td>
+          <td class="num">5d</td></tr><tr>
           <td><b>CAT</b></td><td class="num">4</td>
-          <td class="num">$897.86</td><td class="num">$933.99</td>
-          <td class="num">$3,736</td>
-          <td class="num" style="color:#3fb950">$+145</td>
-          <td class="num" style="color:#3fb950">+4.0%</td>
-          <td class="num">4d</td></tr>
-    <tr style="font-weight:bold"><td>合计</td><td></td><td></td><td></td><td class="num">$18,685</td><td class="num" style="color:#3fb950">$+413</td><td></td><td></td></tr>
+          <td class="num">$897.86</td><td class="num">$957.45</td>
+          <td class="num">$3,830</td>
+          <td class="num" style="color:#3fb950">$+238</td>
+          <td class="num" style="color:#3fb950">+6.6%</td>
+          <td class="num">5d</td></tr>
+    <tr style="font-weight:bold"><td>合计</td><td></td><td></td><td></td><td class="num">$19,087</td><td class="num" style="color:#3fb950">$+816</td><td></td><td></td></tr>
     </table>
     <div style="margin-top:8px;font-size:11px;color:#8b949e">
-    现金: <b>$1,728.51</b> | 已实现 PnL: <b style="color:#3fb950">$+0.00</b> | 总权益: <b>$20,413.36</b>
+    现金: <b>$1,728.51</b> | 已实现 PnL: <b style="color:#3fb950">$+0.00</b> | 总权益: <b>$20,815.84</b>
     </div>
     </div>
 
@@ -162,71 +163,71 @@
 <h2>🏦 Alpaca Paper 账户真实持仓（只读）</h2>
 <div class="card">
 <div style="margin-bottom:10px;font-size:12px">
-  <b>账户权益:</b> $107,174.29 | <b>现金:</b> $23,758.53 | <b>状态:</b> ACTIVE</div><table>
+  <b>账户权益:</b> $105,975.09 | <b>现金:</b> $23,758.53 | <b>状态:</b> ACTIVE</div><table>
 <tr><th>Ticker</th><th class="num">持仓</th><th class="num">成本价</th><th class="num">现价</th><th class="num">市值</th><th class="num">浮动 PnL</th><th class="num">PnL%</th></tr><tr><td><b>AAPL</b></td><td class="num">7</td>
-<td class="num">$291.56</td><td class="num">$295.82</td>
-<td class="num">$2,070.74</td>
-<td class="num" style="color:#3fb950">$+29.82</td>
-<td class="num" style="color:#3fb950">+1.5%</td></tr><tr><td><b>ABBV</b></td><td class="num">10</td>
-<td class="num">$225.03</td><td class="num">$221.70</td>
-<td class="num">$2,217.00</td>
-<td class="num" style="color:#f85149">$-33.30</td>
-<td class="num" style="color:#f85149">-1.5%</td></tr><tr><td><b>AMD</b></td><td class="num">32</td>
-<td class="num">$469.60</td><td class="num">$544.00</td>
-<td class="num">$17,408.00</td>
-<td class="num" style="color:#3fb950">$+2,380.67</td>
-<td class="num" style="color:#3fb950">+15.8%</td></tr><tr><td><b>AVGO</b></td><td class="num">27</td>
-<td class="num">$380.28</td><td class="num">$393.10</td>
-<td class="num">$10,613.70</td>
-<td class="num" style="color:#3fb950">$+346.24</td>
-<td class="num" style="color:#3fb950">+3.4%</td></tr><tr><td><b>BA</b></td><td class="num">7</td>
-<td class="num">$218.40</td><td class="num">$228.67</td>
-<td class="num">$1,600.69</td>
-<td class="num" style="color:#3fb950">$+71.89</td>
-<td class="num" style="color:#3fb950">+4.7%</td></tr><tr><td><b>CAT</b></td><td class="num">11</td>
-<td class="num">$904.59</td><td class="num">$933.82</td>
-<td class="num">$10,272.02</td>
-<td class="num" style="color:#3fb950">$+321.56</td>
-<td class="num" style="color:#3fb950">+3.2%</td></tr><tr><td><b>CSCO</b></td><td class="num">44</td>
-<td class="num">$119.19</td><td class="num">$120.30</td>
-<td class="num">$5,293.20</td>
-<td class="num" style="color:#3fb950">$+48.93</td>
-<td class="num" style="color:#3fb950">+0.9%</td></tr><tr><td><b>GE</b></td><td class="num">13</td>
-<td class="num">$322.01</td><td class="num">$342.31</td>
-<td class="num">$4,450.03</td>
-<td class="num" style="color:#3fb950">$+263.90</td>
-<td class="num" style="color:#3fb950">+6.3%</td></tr><tr><td><b>GOOGL</b></td><td class="num">5</td>
-<td class="num">$360.87</td><td class="num">$369.06</td>
-<td class="num">$1,845.30</td>
-<td class="num" style="color:#3fb950">$+40.95</td>
-<td class="num" style="color:#3fb950">+2.3%</td></tr><tr><td><b>INTC</b></td><td class="num">95</td>
-<td class="num">$107.95</td><td class="num">$126.19</td>
-<td class="num">$11,988.05</td>
-<td class="num" style="color:#3fb950">$+1,732.51</td>
-<td class="num" style="color:#3fb950">+16.9%</td></tr><tr><td><b>JNJ</b></td><td class="num">9</td>
-<td class="num">$240.19</td><td class="num">$235.59</td>
-<td class="num">$2,120.31</td>
-<td class="num" style="color:#f85149">$-41.40</td>
+<td class="num">$291.56</td><td class="num">$299.06</td>
+<td class="num">$2,093.39</td>
+<td class="num" style="color:#3fb950">$+52.47</td>
+<td class="num" style="color:#3fb950">+2.6%</td></tr><tr><td><b>ABBV</b></td><td class="num">10</td>
+<td class="num">$225.03</td><td class="num">$221.88</td>
+<td class="num">$2,218.80</td>
+<td class="num" style="color:#f85149">$-31.50</td>
+<td class="num" style="color:#f85149">-1.4%</td></tr><tr><td><b>AMD</b></td><td class="num">32</td>
+<td class="num">$469.60</td><td class="num">$520.48</td>
+<td class="num">$16,655.36</td>
+<td class="num" style="color:#3fb950">$+1,628.03</td>
+<td class="num" style="color:#3fb950">+10.8%</td></tr><tr><td><b>AVGO</b></td><td class="num">27</td>
+<td class="num">$380.28</td><td class="num">$379.12</td>
+<td class="num">$10,236.24</td>
+<td class="num" style="color:#f85149">$-31.22</td>
+<td class="num" style="color:#f85149">-0.3%</td></tr><tr><td><b>BA</b></td><td class="num">7</td>
+<td class="num">$218.40</td><td class="num">$228.41</td>
+<td class="num">$1,598.87</td>
+<td class="num" style="color:#3fb950">$+70.07</td>
+<td class="num" style="color:#3fb950">+4.6%</td></tr><tr><td><b>CAT</b></td><td class="num">11</td>
+<td class="num">$904.59</td><td class="num">$959.06</td>
+<td class="num">$10,549.66</td>
+<td class="num" style="color:#3fb950">$+599.20</td>
+<td class="num" style="color:#3fb950">+6.0%</td></tr><tr><td><b>CSCO</b></td><td class="num">44</td>
+<td class="num">$119.19</td><td class="num">$119.64</td>
+<td class="num">$5,264.16</td>
+<td class="num" style="color:#3fb950">$+19.89</td>
+<td class="num" style="color:#3fb950">+0.4%</td></tr><tr><td><b>GE</b></td><td class="num">13</td>
+<td class="num">$322.01</td><td class="num">$351.84</td>
+<td class="num">$4,573.92</td>
+<td class="num" style="color:#3fb950">$+387.79</td>
+<td class="num" style="color:#3fb950">+9.3%</td></tr><tr><td><b>GOOGL</b></td><td class="num">5</td>
+<td class="num">$360.87</td><td class="num">$371.61</td>
+<td class="num">$1,858.05</td>
+<td class="num" style="color:#3fb950">$+53.70</td>
+<td class="num" style="color:#3fb950">+3.0%</td></tr><tr><td><b>INTC</b></td><td class="num">95</td>
+<td class="num">$107.95</td><td class="num">$120.88</td>
+<td class="num">$11,483.60</td>
+<td class="num" style="color:#3fb950">$+1,228.06</td>
+<td class="num" style="color:#3fb950">+12.0%</td></tr><tr><td><b>JNJ</b></td><td class="num">9</td>
+<td class="num">$240.19</td><td class="num">$235.71</td>
+<td class="num">$2,121.34</td>
+<td class="num" style="color:#f85149">$-40.37</td>
 <td class="num" style="color:#f85149">-1.9%</td></tr><tr><td><b>LLY</b></td><td class="num">7</td>
-<td class="num">$1145.00</td><td class="num">$1129.71</td>
-<td class="num">$7,907.97</td>
-<td class="num" style="color:#f85149">$-107.03</td>
-<td class="num" style="color:#f85149">-1.3%</td></tr><tr><td><b>MA</b></td><td class="num">3</td>
-<td class="num">$491.01</td><td class="num">$491.00</td>
-<td class="num">$1,473.00</td>
-<td class="num" style="color:#f85149">$-0.03</td>
-<td class="num" style="color:#f85149">-0.0%</td></tr><tr><td><b>NVDA</b></td><td class="num">12</td>
-<td class="num">$204.48</td><td class="num">$211.30</td>
-<td class="num">$2,535.60</td>
-<td class="num" style="color:#3fb950">$+81.84</td>
-<td class="num" style="color:#3fb950">+3.3%</td></tr><tr><td><b>V</b></td><td class="num">5</td>
-<td class="num">$324.12</td><td class="num">$324.03</td>
-<td class="num">$1,620.15</td>
-<td class="num" style="color:#f85149">$-0.45</td>
-<td class="num" style="color:#f85149">-0.0%</td></tr><tr style="font-weight:bold;border-top:2px solid #30363d">
+<td class="num">$1145.00</td><td class="num">$1129.00</td>
+<td class="num">$7,903.00</td>
+<td class="num" style="color:#f85149">$-112.00</td>
+<td class="num" style="color:#f85149">-1.4%</td></tr><tr><td><b>MA</b></td><td class="num">3</td>
+<td class="num">$491.01</td><td class="num">$499.05</td>
+<td class="num">$1,497.15</td>
+<td class="num" style="color:#3fb950">$+24.12</td>
+<td class="num" style="color:#3fb950">+1.6%</td></tr><tr><td><b>NVDA</b></td><td class="num">12</td>
+<td class="num">$204.48</td><td class="num">$208.89</td>
+<td class="num">$2,506.68</td>
+<td class="num" style="color:#3fb950">$+52.92</td>
+<td class="num" style="color:#3fb950">+2.2%</td></tr><tr><td><b>V</b></td><td class="num">5</td>
+<td class="num">$324.12</td><td class="num">$331.41</td>
+<td class="num">$1,657.05</td>
+<td class="num" style="color:#3fb950">$+36.45</td>
+<td class="num" style="color:#3fb950">+2.2%</td></tr><tr style="font-weight:bold;border-top:2px solid #30363d">
 <td>合计 (15 只)</td><td></td><td></td><td></td>
-<td class="num">$83,415.76</td>
-<td class="num" style="color:#3fb950">$+5,136.10</td><td></td></tr></table>
+<td class="num">$82,217.27</td>
+<td class="num" style="color:#3fb950">$+3,937.61</td><td></td></tr></table>
 </div>
 
 <h2>🌍 宏观环境 & 多因子</h2>
@@ -234,7 +235,7 @@
 <div style="display:flex;gap:24px;align-items:center;margin-bottom:12px">
   <div>
     <div style="font-size:10px;color:#8b949e">风险评分</div>
-    <div style="font-size:28px;font-weight:bold;color:#3fb950">37<span style="font-size:14px">/100</span></div>
+    <div style="font-size:28px;font-weight:bold;color:#3fb950">40<span style="font-size:14px">/100</span></div>
   </div>
   <div>
     <div style="font-size:10px;color:#8b949e">仓位系数</div>
@@ -242,45 +243,45 @@
   </div>
   <div>
     <div style="font-size:10px;color:#8b949e">建议</div>
-    <div style="font-size:20px;font-weight:bold;color:#58a6ff">FOMC_EVACUATION</div>
+    <div style="font-size:20px;font-weight:bold;color:#58a6ff">FOMC_BLACKOUT</div>
   </div>
   <div style="flex:1;text-align:right;color:#8b949e;font-size:11px">
-    经济事件: 无<br>
-    日期: 2026-06-16
+    经济事件: FOMC 利率决议<br>
+    日期: 2026-06-17
   </div>
 </div>
 <table>
 <tr><th>因子</th><th>评分</th><th style="width:200px"></th><th>信号</th><th>详情</th></tr><tr>
 <td style="font-size:11px">经济日历</td>
-<td class="num" style="font-weight:bold;color:#f85149">75</td>
-<td style="font-size:8px"><span style="color:#f85149">███████████████░░░░░</span></td>
+<td class="num" style="font-weight:bold;color:#f85149">95</td>
+<td style="font-size:8px"><span style="color:#f85149">███████████████████░</span></td>
 <td style="font-size:10px;color:#f85149">BEARISH</td>
-<td style="font-size:10px;color:#8b949e">FOMC 1天后 — 建议提前清仓</td></tr><tr>
+<td style="font-size:10px;color:#8b949e">今日 FOMC 利率决议 — 极高波动，建议空仓</td></tr><tr>
 <td style="font-size:11px">VIX(VIXY)</td>
 <td class="num" style="font-weight:bold;color:#3fb950">10</td>
 <td style="font-size:8px"><span style="color:#3fb950">██░░░░░░░░░░░░░░░░░░</span></td>
 <td style="font-size:10px;color:#3fb950">BULLISH</td>
-<td style="font-size:10px;color:#8b949e">VIXY=$21.73 — 正常</td></tr><tr>
+<td style="font-size:10px;color:#8b949e">VIXY=$21.59 — 正常</td></tr><tr>
 <td style="font-size:11px">DXY</td>
 <td class="num" style="font-weight:bold;color:#3fb950">15</td>
 <td style="font-size:8px"><span style="color:#3fb950">███░░░░░░░░░░░░░░░░░</span></td>
 <td style="font-size:10px;color:#d2991d">NEUTRAL</td>
-<td style="font-size:10px;color:#8b949e">美元稳定 | UUP=$27.97</td></tr><tr>
+<td style="font-size:10px;color:#8b949e">美元稳定 | UUP=$27.90</td></tr><tr>
 <td style="font-size:11px">行业轮动</td>
 <td class="num" style="font-weight:bold;color:#3fb950">20</td>
 <td style="font-size:8px"><span style="color:#3fb950">████░░░░░░░░░░░░░░░░</span></td>
 <td style="font-size:10px;color:#d2991d">NEUTRAL</td>
-<td style="font-size:10px;color:#8b949e">持仓行业均 +4.4% | 领涨: Technology +10.0%, Healthcare +5.0%, Industrials +4.7% | 领跌: Energy -8.3%, Communi</td></tr><tr>
+<td style="font-size:10px;color:#8b949e">持仓行业均 +6.0% | 领涨: Technology +8.8%, Materials +7.8%, Industrials +7.3% | 领跌: Energy -9.9%, Communica</td></tr><tr>
 <td style="font-size:11px">资金流</td>
 <td class="num" style="font-weight:bold;color:#3fb950">10</td>
 <td style="font-size:8px"><span style="color:#3fb950">██░░░░░░░░░░░░░░░░░░</span></td>
 <td style="font-size:10px;color:#d2991d">NEUTRAL</td>
-<td style="font-size:10px;color:#8b949e">成交量正常 (1.3x)</td></tr><tr>
+<td style="font-size:10px;color:#8b949e">成交缩量 0.5x — 市场观望</td></tr><tr>
 <td style="font-size:11px">市场宽度</td>
-<td class="num" style="font-weight:bold;color:#d2991d">40</td>
-<td style="font-size:8px"><span style="color:#d2991d">████████░░░░░░░░░░░░</span></td>
-<td style="font-size:10px;color:#f85149">BEARISH</td>
-<td style="font-size:10px;color:#8b949e">仅 49% 股票 > MA20 (18/37) — 市场分化</td></tr></table></div>
+<td class="num" style="font-weight:bold;color:#3fb950">15</td>
+<td style="font-size:8px"><span style="color:#3fb950">███░░░░░░░░░░░░░░░░░</span></td>
+<td style="font-size:10px;color:#d2991d">NEUTRAL</td>
+<td style="font-size:10px;color:#8b949e">51% 股票 > MA20 (19/37) — 中性偏强</td></tr></table></div>
 
 <h2>🎯 每日进度跟踪</h2>
 <div class="card">
@@ -295,7 +296,7 @@
           <td class="num">5</td><td class="num">$1,728.51</td></tr></table></div>
 
 <div class="footer">
-  自动生成: 2026-06-16 15:23:04 ET | Claude Code 量化模型 | 模拟交易仅供参考
+  自动生成: 2026-06-17 00:44:34 ET | Claude Code 量化模型 | 模拟交易仅供参考
   | <a href="index.html" style="color:#58a6ff">返回综合 Dashboard</a>
 </div>
 </body></html>
