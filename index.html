@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <meta http-equiv="refresh" content="900">
-<title>【Claude Code】美股量化模型 — 模拟盘实时 Dashboard</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="US量化">
+<link rel="apple-touch-icon" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" sizes="512x512" href="icon-512.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+<link rel="manifest" href="manifest.json">
+<title>美股量化 Dashboard</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#0f1117;color:#e1e4e8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',monospace;padding:20px;line-height:1.5}
@@ -35,7 +43,7 @@ img.chart{width:100%;border-radius:4px;margin-top:6px}
 <div class="nav">
   <a href="index.html">← 综合 Dashboard</a>
   <span style="color:#8b949e">|</span>
-  <span style="color:#8b949e">刷新: 2026-06-16 10:30 ET</span>
+  <span style="color:#8b949e">刷新: 2026-06-16 13:17 ET</span>
   <span style="color:#8b949e">|</span>
   <span style="color:#8b949e">每 15 分钟自动刷新</span>
 </div>
@@ -138,51 +146,51 @@ img.chart{width:100%;border-radius:4px;margin-top:6px}
 <h2>🏦 Alpaca Paper 账户真实持仓（只读）</h2>
 <div class="card">
 <div style="margin-bottom:10px;font-size:12px">
-  <b>账户权益:</b> $106,945.77 | <b>现金:</b> $23,758.53 | <b>状态:</b> ACTIVE</div><table>
+  <b>账户权益:</b> $107,194.09 | <b>现金:</b> $23,758.53 | <b>状态:</b> ACTIVE</div><table>
 <tr><th>Ticker</th><th class="num">持仓</th><th class="num">成本价</th><th class="num">现价</th><th class="num">市值</th><th class="num">浮动 PnL</th><th class="num">PnL%</th></tr><tr><td><b>AAPL</b></td><td class="num">7</td>
-<td class="num">$291.56</td><td class="num">$296.72</td>
-<td class="num">$2,077.04</td>
-<td class="num" style="color:#3fb950">$+36.12</td>
-<td class="num" style="color:#3fb950">+1.8%</td></tr><tr><td><b>ABBV</b></td><td class="num">10</td>
+<td class="num">$291.56</td><td class="num">$295.88</td>
+<td class="num">$2,071.16</td>
+<td class="num" style="color:#3fb950">$+30.24</td>
+<td class="num" style="color:#3fb950">+1.5%</td></tr><tr><td><b>ABBV</b></td><td class="num">10</td>
 <td class="num">$225.03</td><td class="num">$221.70</td>
 <td class="num">$2,217.00</td>
 <td class="num" style="color:#f85149">$-33.30</td>
 <td class="num" style="color:#f85149">-1.5%</td></tr><tr><td><b>AMD</b></td><td class="num">32</td>
-<td class="num">$469.60</td><td class="num">$543.00</td>
-<td class="num">$17,376.00</td>
-<td class="num" style="color:#3fb950">$+2,348.67</td>
-<td class="num" style="color:#3fb950">+15.6%</td></tr><tr><td><b>AVGO</b></td><td class="num">27</td>
-<td class="num">$380.28</td><td class="num">$391.79</td>
-<td class="num">$10,578.33</td>
-<td class="num" style="color:#3fb950">$+310.87</td>
-<td class="num" style="color:#3fb950">+3.0%</td></tr><tr><td><b>BA</b></td><td class="num">7</td>
+<td class="num">$469.60</td><td class="num">$546.00</td>
+<td class="num">$17,472.00</td>
+<td class="num" style="color:#3fb950">$+2,444.67</td>
+<td class="num" style="color:#3fb950">+16.3%</td></tr><tr><td><b>AVGO</b></td><td class="num">27</td>
+<td class="num">$380.28</td><td class="num">$392.39</td>
+<td class="num">$10,594.53</td>
+<td class="num" style="color:#3fb950">$+327.07</td>
+<td class="num" style="color:#3fb950">+3.2%</td></tr><tr><td><b>BA</b></td><td class="num">7</td>
 <td class="num">$218.40</td><td class="num">$228.60</td>
 <td class="num">$1,600.20</td>
 <td class="num" style="color:#3fb950">$+71.40</td>
 <td class="num" style="color:#3fb950">+4.7%</td></tr><tr><td><b>CAT</b></td><td class="num">11</td>
-<td class="num">$904.59</td><td class="num">$933.79</td>
-<td class="num">$10,271.69</td>
-<td class="num" style="color:#3fb950">$+321.23</td>
+<td class="num">$904.59</td><td class="num">$933.82</td>
+<td class="num">$10,272.02</td>
+<td class="num" style="color:#3fb950">$+321.56</td>
 <td class="num" style="color:#3fb950">+3.2%</td></tr><tr><td><b>CSCO</b></td><td class="num">44</td>
-<td class="num">$119.19</td><td class="num">$119.65</td>
-<td class="num">$5,264.60</td>
-<td class="num" style="color:#3fb950">$+20.33</td>
-<td class="num" style="color:#3fb950">+0.4%</td></tr><tr><td><b>GE</b></td><td class="num">13</td>
-<td class="num">$322.01</td><td class="num">$341.53</td>
-<td class="num">$4,439.89</td>
-<td class="num" style="color:#3fb950">$+253.76</td>
-<td class="num" style="color:#3fb950">+6.1%</td></tr><tr><td><b>GOOGL</b></td><td class="num">5</td>
-<td class="num">$360.87</td><td class="num">$369.63</td>
-<td class="num">$1,848.15</td>
-<td class="num" style="color:#3fb950">$+43.80</td>
+<td class="num">$119.19</td><td class="num">$120.30</td>
+<td class="num">$5,293.20</td>
+<td class="num" style="color:#3fb950">$+48.93</td>
+<td class="num" style="color:#3fb950">+0.9%</td></tr><tr><td><b>GE</b></td><td class="num">13</td>
+<td class="num">$322.01</td><td class="num">$341.99</td>
+<td class="num">$4,445.87</td>
+<td class="num" style="color:#3fb950">$+259.74</td>
+<td class="num" style="color:#3fb950">+6.2%</td></tr><tr><td><b>GOOGL</b></td><td class="num">5</td>
+<td class="num">$360.87</td><td class="num">$369.53</td>
+<td class="num">$1,847.65</td>
+<td class="num" style="color:#3fb950">$+43.30</td>
 <td class="num" style="color:#3fb950">+2.4%</td></tr><tr><td><b>INTC</b></td><td class="num">95</td>
-<td class="num">$107.95</td><td class="num">$124.78</td>
-<td class="num">$11,854.10</td>
-<td class="num" style="color:#3fb950">$+1,598.56</td>
-<td class="num" style="color:#3fb950">+15.6%</td></tr><tr><td><b>JNJ</b></td><td class="num">9</td>
-<td class="num">$240.19</td><td class="num">$235.60</td>
-<td class="num">$2,120.40</td>
-<td class="num" style="color:#f85149">$-41.31</td>
+<td class="num">$107.95</td><td class="num">$125.83</td>
+<td class="num">$11,953.85</td>
+<td class="num" style="color:#3fb950">$+1,698.31</td>
+<td class="num" style="color:#3fb950">+16.6%</td></tr><tr><td><b>JNJ</b></td><td class="num">9</td>
+<td class="num">$240.19</td><td class="num">$235.59</td>
+<td class="num">$2,120.31</td>
+<td class="num" style="color:#f85149">$-41.40</td>
 <td class="num" style="color:#f85149">-1.9%</td></tr><tr><td><b>LLY</b></td><td class="num">7</td>
 <td class="num">$1145.00</td><td class="num">$1131.50</td>
 <td class="num">$7,920.50</td>
@@ -192,17 +200,17 @@ img.chart{width:100%;border-radius:4px;margin-top:6px}
 <td class="num">$1,471.92</td>
 <td class="num" style="color:#f85149">$-1.11</td>
 <td class="num" style="color:#f85149">-0.1%</td></tr><tr><td><b>NVDA</b></td><td class="num">12</td>
-<td class="num">$204.48</td><td class="num">$210.66</td>
-<td class="num">$2,527.92</td>
-<td class="num" style="color:#3fb950">$+74.16</td>
-<td class="num" style="color:#3fb950">+3.0%</td></tr><tr><td><b>V</b></td><td class="num">5</td>
-<td class="num">$324.12</td><td class="num">$323.90</td>
-<td class="num">$1,619.50</td>
-<td class="num" style="color:#f85149">$-1.10</td>
+<td class="num">$204.48</td><td class="num">$211.40</td>
+<td class="num">$2,536.80</td>
+<td class="num" style="color:#3fb950">$+83.04</td>
+<td class="num" style="color:#3fb950">+3.4%</td></tr><tr><td><b>V</b></td><td class="num">5</td>
+<td class="num">$324.12</td><td class="num">$323.71</td>
+<td class="num">$1,618.55</td>
+<td class="num" style="color:#f85149">$-2.05</td>
 <td class="num" style="color:#f85149">-0.1%</td></tr><tr style="font-weight:bold;border-top:2px solid #30363d">
 <td>合计 (15 只)</td><td></td><td></td><td></td>
-<td class="num">$83,187.24</td>
-<td class="num" style="color:#3fb950">$+4,907.58</td><td></td></tr></table>
+<td class="num">$83,435.56</td>
+<td class="num" style="color:#3fb950">$+5,155.90</td><td></td></tr></table>
 </div>
 
 <h2>🌍 宏观环境 & 多因子</h2>
@@ -271,7 +279,7 @@ img.chart{width:100%;border-radius:4px;margin-top:6px}
           <td class="num">5</td><td class="num">$1,728.51</td></tr></table></div>
 
 <div class="footer">
-  自动生成: 2026-06-16 10:30:34 ET | Claude Code 量化模型 | 模拟交易仅供参考
+  自动生成: 2026-06-16 13:18:03 ET | Claude Code 量化模型 | 模拟交易仅供参考
   | <a href="index.html" style="color:#58a6ff">返回综合 Dashboard</a>
 </div>
 </body></html>
