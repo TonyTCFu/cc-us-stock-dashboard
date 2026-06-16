@@ -1,6 +1,6 @@
 {
-  "name": "美股量化 Dashboard",
-  "short_name": "US量化",
+  "name": "US Quant Dashboard",
+  "short_name": "US Quant",
   "description": "美股短线交易量化模拟盘实时看板",
   "start_url": "/",
   "display": "standalone",
