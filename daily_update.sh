@@ -17,8 +17,12 @@ git -C deploy commit -m "Auto update $(date +%Y-%m-%d)" >> "$LOG" 2>&1 || true
 git -C deploy push origin main >> "$LOG" 2>&1
 
 # 触发 GitHub Pages 重建，清除 CDN 缓存
-curl -s -X POST "https://api.github.com/repos/TonyTCFu/cc-us-stock-dashboard/pages/builds" \
-  -H "Authorization: Bearer REDACTED" \
-  -H "Accept: application/vnd.github+json" >> "$LOG" 2>&1
+TOKEN_FILE="/Users/tonyfu/Claude/deploy/.gh_token"
+if [ -f "$TOKEN_FILE" ]; then
+  GH_TOKEN=$(cat "$TOKEN_FILE")
+  curl -s -X POST "https://api.github.com/repos/TonyTCFu/cc-us-stock-dashboard/pages/builds" \
+    -H "Authorization: Bearer $GH_TOKEN" \
+    -H "Accept: application/vnd.github+json" >> "$LOG" 2>&1
+fi
 
 echo "Done: $(date)" >> "$LOG"
