@@ -1,4 +1,4 @@
 *.html
 !index.html
-!dash.html
+!dash*.html
 .gh_token
