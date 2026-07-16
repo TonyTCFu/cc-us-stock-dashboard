@@ -1,19 +1,11 @@
 <!DOCTYPE html>
 <html lang="zh"><head>
-<meta charset="UTF-8"><meta http-equiv="Cache-Control" content="no-store,no-cache">
-<title>美股量化 Dashboard</title></head>
+<meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-store,no-cache,must-revalidate">
+</head>
 <body style="background:#0f1117;color:#e1e4e8;text-align:center;padding-top:40vh">
 <p>📊 加载中...</p>
 <script>
-(function(){
-  var bid = localStorage.getItem('dash_ver');
-  var cur = '20260716205310';
-  var el = document.querySelector('p');
-  if (bid !== cur) {
-    el.textContent = '🔄 更新中...';
-    localStorage.setItem('dash_ver', cur);
-  }
-  location.replace('dash_20260716205310.html');
-})();
+var b=localStorage.getItem("dash_ver"),c="20260716205852";if(b!==c){document.querySelector("p").textContent="🔄 更新中...";localStorage.setItem("dash_ver",c)}location.replace("dash_20260716205852.html");
 </script>
 </body></html>
