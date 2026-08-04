@@ -1,11 +1,208 @@
 <!DOCTYPE html>
-<html lang="zh"><head>
-<meta charset="UTF-8"><meta http-equiv="Cache-Control" content="no-store,no-cache,must-revalidate">
-</head><body style="background:#0f1117;color:#e1e4e8;text-align:center;padding-top:40vh">
-<p>📊 加载中...</p>
-<script>
-var b=localStorage.getItem("dash_ver"),c="dash_20260804223433.html";
-if(b!==c){document.querySelector("p").textContent="🔄 更新中...";localStorage.setItem("dash_ver",c)}
-location.replace("dash_20260804223433.html");
-</script>
-</body></html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta http-equiv="refresh" content="900">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Claude Code Quant">
+<link rel="apple-touch-icon" sizes="192x192" href="icon-192.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="manifest" href="manifest.json">
+<title>【Claude Code】美股量化 Dashboard</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0f1117;color:#e1e4e8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;padding:10px;line-height:1.5;-webkit-text-size-adjust:100%}
+h1{font-size:17px;color:#58a6ff;margin-bottom:2px}
+h2{font-size:14px;color:#58a6ff;margin:18px 0 6px;padding-bottom:4px;border-bottom:2px solid #30363d}
+.subtitle{color:#8b949e;font-size:11px;margin:2px 0 12px;line-height:1.5}
+.card{background:#1a1d27;border:1px solid #30363d;border-radius:8px;padding:10px;margin-bottom:8px;overflow-x:auto}
+.metrics-bar{display:flex;align-items:center;gap:6px;flex-wrap:wrap;font-size:11px;color:#8b949e;padding:6px 0 10px;line-height:1.7}
+.metrics-bar b{color:#f0f3f5;font-size:12px}
+.m-sep{color:#30363d}
+table{width:100%;border-collapse:collapse;font-size:11px}
+th{text-align:left;padding:5px 6px;border-bottom:2px solid #30363d;color:#8b949e;font-weight:600;font-size:10px;white-space:nowrap}
+td{padding:4px 6px;border-bottom:1px solid #30363d;white-space:nowrap}
+.num{text-align:right;font-variant-numeric:tabular-nums}
+.bull{color:#3fb950} .bear{color:#f85149}
+.nav{display:flex;gap:6px;margin-bottom:10px;font-size:10px;flex-wrap:wrap}
+.nav a{color:#58a6ff;text-decoration:none}
+.footer{margin-top:14px;padding:8px 0;border-top:1px solid #30363d;color:#8b949e;font-size:9px}
+.badge{display:inline-block;padding:1px 6px;border-radius:8px;font-size:9px;font-weight:bold;margin:1px}
+.grid2{display:flex;flex-direction:column;gap:8px}
+@media(min-width:768px){
+    body{padding:16px} h1{font-size:18px} h2{font-size:15px}
+    .card{padding:14px;margin-bottom:12px} .metrics-bar{font-size:13px;gap:10px}
+    .grid2{flex-direction:row} .grid2 .card{flex:1}
+}
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <span style="color:#58a6ff">📈 <b>Claude Code 美股量化</b></span>
+  <span style="color:#8b949e">| 刷新: 2026-08-04 23:01</span>
+  <span style="color:#8b949e">| 每 15 分钟自动刷新</span>
+</div>
+
+<h1>📈 【Claude Code】美股量化模型 — 即时持仓</h1>
+<div class="subtitle">
+  $106K Alpaca Paper | 8因子 + AI主题 | SL5%/TP10% | 信号驱动调仓 | 2026-06-12 起运行
+</div>
+
+<div class="metrics-bar">
+    <span>权益 <b>$102,203</b></span>
+    <span class="m-sep">|</span>
+    <span>现金 <b>$82,502</b></span>
+    <span class="m-sep">|</span>
+    <span>未实现 <b style="color:#3fb950">$+248</b></span>
+    <span class="m-sep">|</span>
+    <span>今日 <b style="color:#3fb950">+0.14%</b></span>
+    <span class="m-sep">|</span>
+    <span>持仓 <b>6 档</b></span>
+    <span class="m-sep">|</span>
+    <span>VIX <b>🟢 15.86</b> (正常)</span>
+</div>
+
+<div class="grid2">
+    <div class="card">
+        <h2>💼 即时持仓 (6 档)</h2>
+        <table>
+            <tr><th>股票</th><th class="num">股数</th><th class="num">成本</th><th class="num">现价</th><th class="num">市值</th><th class="num">盈亏$</th><th class="num">盈亏%</th></tr>
+            <tr>
+            <td><b>KO</b></td>
+            <td class="num">49</td>
+            <td class="num">$87.54</td>
+            <td class="num">$86.33</td>
+            <td class="num">$4,230</td>
+            <td class="num bear">$-59</td>
+            <td class="num bear">-1.4%</td>
+        </tr><tr>
+            <td><b>BAC</b></td>
+            <td class="num">66</td>
+            <td class="num">$61.87</td>
+            <td class="num">$63.46</td>
+            <td class="num">$4,188</td>
+            <td class="num bull">$+105</td>
+            <td class="num bull">+2.6%</td>
+        </tr><tr>
+            <td><b>JPM</b></td>
+            <td class="num">11</td>
+            <td class="num">$352.56</td>
+            <td class="num">$362.40</td>
+            <td class="num">$3,986</td>
+            <td class="num bull">$+108</td>
+            <td class="num bull">+2.8%</td>
+        </tr><tr>
+            <td><b>GE</b></td>
+            <td class="num">10</td>
+            <td class="num">$359.14</td>
+            <td class="num">$372.62</td>
+            <td class="num">$3,726</td>
+            <td class="num bull">$+135</td>
+            <td class="num bull">+3.8%</td>
+        </tr><tr>
+            <td><b>JNJ</b></td>
+            <td class="num">14</td>
+            <td class="num">$256.38</td>
+            <td class="num">$253.47</td>
+            <td class="num">$3,549</td>
+            <td class="num bear">$-41</td>
+            <td class="num bear">-1.1%</td>
+        </tr><tr>
+            <td><b>T</b></td>
+            <td class="num">1</td>
+            <td class="num">$23.37</td>
+            <td class="num">$23.14</td>
+            <td class="num">$23</td>
+            <td class="num bear">$-0</td>
+            <td class="num bear">-1.0%</td>
+        </tr>
+            <tr style="font-weight:bold;border-top:2px solid #58a6ff">
+                <td>合计</td><td class="num">-</td><td class="num">-</td><td class="num">-</td>
+                <td class="num">$19,703</td>
+                <td class="num bear">$+248</td><td class="num bear">-</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="card">
+        <h2>🎯 8因子信号排名 (Top 8)</h2>
+        <table>
+            <tr><th>#</th><th>股票</th><th class="num">信号</th><th>强势因子</th></tr>
+            <tr>
+            <td class="num">1</td>
+            <td><b>NVDA</b></td>
+            <td class="num">+1.210</td>
+            <td style="font-size:10px;color:#8b949e">ai_industry(0.74), revenue_growth(0.31)</td>
+        </tr><tr>
+            <td class="num">2</td>
+            <td><b>GOOGL</b></td>
+            <td class="num">+1.033</td>
+            <td style="font-size:10px;color:#8b949e">ai_industry(0.66), momentum(0.43)</td>
+        </tr><tr>
+            <td class="num">3</td>
+            <td><b>AVGO</b></td>
+            <td class="num">+0.964</td>
+            <td style="font-size:10px;color:#8b949e">ai_industry(0.70), revenue_growth(0.15)</td>
+        </tr><tr>
+            <td class="num">4</td>
+            <td><b>AAPL</b></td>
+            <td class="num">+0.714</td>
+            <td style="font-size:10px;color:#8b949e">ai_industry(0.46), momentum(0.14)</td>
+        </tr><tr>
+            <td class="num">5</td>
+            <td><b>LLY</b></td>
+            <td class="num">+0.710</td>
+            <td style="font-size:10px;color:#8b949e">revenue_growth(0.19), industry_momentum(0.19)</td>
+        </tr><tr>
+            <td class="num">6</td>
+            <td><b>MSFT</b></td>
+            <td class="num">+0.686</td>
+            <td style="font-size:10px;color:#8b949e">ai_industry(0.70), flow(0.16)</td>
+        </tr><tr>
+            <td class="num">7</td>
+            <td><b>CAT</b></td>
+            <td class="num">+0.648</td>
+            <td style="font-size:10px;color:#8b949e">momentum(0.66), ai_industry(0.10)</td>
+        </tr><tr>
+            <td class="num">8</td>
+            <td><b>ABBV</b></td>
+            <td class="num">+0.553</td>
+            <td style="font-size:10px;color:#8b949e">industry_momentum(0.19), quality(0.11)</td>
+        </tr>
+        </table>
+        <div style="margin-top:6px;font-size:10px;color:#8b949e">
+            权重: momentum .20 | ai_industry .20 | quality .15 | flow/value/revenue_growth/industry_momentum .10 | low_vol .05
+        </div>
+    </div>
+</div>
+
+<h2>📜 最近调仓活动</h2>
+<div class="card">
+            <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:4px">
+                <span style="font-size:12px">🔄 <b>2026-06-17 14:44 ET</b></span>
+                <span style="font-size:10px;color:#8b949e">权益 $106,108 | VIX 19.44 | 宏观 ×50%</span>
+            </div>
+            <div style="margin-top:6px;font-size:11px"><span class="badge" style="background:#1b3a1b;color:#3fb950">🎯 止盈 AMD</span> <span class="badge" style="background:#1b3a1b;color:#3fb950">🎯 止盈 INTC</span> <span class="badge" style="background:#1a2a3a;color:#58a6ff">📉 卖 AAPL,ABBV,BA,GE,JNJ,MA,V</span></div>
+        </div>
+
+<h2>🌍 策略状态</h2>
+<div class="card">
+    <div class="metrics-bar" style="padding:0">
+        <span>📊 因子 <b>8个</b></span><span class="m-sep">|</span>
+        <span>🎯 最大持仓 <b>8 档</b></span><span class="m-sep">|</span>
+        <span>🛡️ 风控 <b>SL -5% / TP +10%</b></span><span class="m-sep">|</span>
+        <span>🔄 调仓 <b>信号驱动</b></span><span class="m-sep">|</span>
+        <span>📅 今日事件 <b>无</b></span><span class="m-sep">|</span>
+        <span>🕐 下次定时检查 <b>明天 5:15 BJT</b></span>
+    </div>
+</div>
+
+<div class="footer">
+    ⚠️ 免责声明：本工具仅供研究用途，不构成投资建议。历史绩效不代表未来表现。<br>
+    生成: 2026-08-04 23:01 | Alpaca Paper Trading | GitHub Pages 部署 | 定时更新: 北京时间周二~六 5:15 AM
+</div>
+
+</body>
+</html>
